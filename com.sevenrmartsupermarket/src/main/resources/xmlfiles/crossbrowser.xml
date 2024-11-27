@@ -1,0 +1,26 @@
+<suite name="Testing" thread-count="5" parallel ="tests"> 
+		<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"></listener>
+	</listeners>
+	<test name="Chromebrowser">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest">
+			</class> 
+		</classes>
+	</test> 
+	
+	<test name = "Edgebrowser">
+		<parameter name="browser" value="edge"></parameter>
+		<classes>
+		<class name = "com.sevenrmartsupermarket.tests.AdminUserTest"></class>
+		</classes>
+	</test>
+	<test name = "firefoxbrowser">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+		<class name = "com.sevenrmartsupermarket.tests.AdminUserTest"></class>
+		</classes>
+	</test>
+ </suite>

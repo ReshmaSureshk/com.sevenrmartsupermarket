@@ -1,0 +1,34 @@
+<suite name="ParallelRun" thread-count="5" parallel="tests">
+	<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"></listener>
+	</listeners>
+	<test name="RegressionTest">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest">
+				<methods>
+					<include name="verifyAllCategory"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RegressionTest2">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest">
+				<methods>
+					<include name="verifyAdminUserInfoClick"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RegressionTest3">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.AdminUserTest">
+				<methods>
+					<include name="verifyNewUser">
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

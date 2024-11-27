@@ -1,0 +1,18 @@
+<suite name="GroupTesting" thread-count="5" parallel="tests">
+	<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"></listener>
+	</listeners>
+	<test name="Grouptesting">
+		<groups>
+			<run>
+				<include name="regression"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.DashBoardTest"></class>
+			<class name="com.sevenrmartsupermarket.tests.AdminUserTest"></class>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest"></class>
+		</classes>
+	</test>
+</suite>
