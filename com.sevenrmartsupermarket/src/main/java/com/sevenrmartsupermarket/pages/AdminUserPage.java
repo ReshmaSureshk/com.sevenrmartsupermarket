@@ -24,6 +24,16 @@ public class AdminUserPage {
 	WebElement userType;
 	@FindBy(xpath = "//button[@name='Create']")
 	WebElement save;
+	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']")
+	WebElement searchUser;
+	@FindBy(xpath="//input[@id='un']")
+	WebElement searchUserName;
+	@FindBy(xpath="//button[@class='btn btn-block-sm btn-danger']")
+	WebElement searchButton;
+	@FindBy(xpath="//span[text()='Active']")
+	WebElement status;
+	@FindBy(xpath="//a[text()='Home']")
+	WebElement home;
 	public AdminUserPage(WebDriver driver) 
 	{
 		this.driver= driver;
@@ -61,4 +71,29 @@ public class AdminUserPage {
 		save.click();
 
 	}
-}
+	public void searchUserButton()
+	{
+		searchUser.click();	
+	}
+	public void serachEnterUserName(String uname)
+	{
+		searchUserName.sendKeys(uname);	
+	}
+	public void searchUser() {
+		searchButton.click();
+	}
+	public String statusUser() {
+		return status.getText();
+		
+	}
+	public void homeButton()
+	{
+		home.click();
+	}
+		
+	}
+
+	
+
+	
+

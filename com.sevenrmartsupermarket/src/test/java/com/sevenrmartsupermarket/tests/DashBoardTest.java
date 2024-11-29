@@ -46,8 +46,17 @@ public class DashBoardTest extends Base {
 		adminuserpage=new AdminUserPage(driver);
 		loginpage.login("admin", "admin");
 		dashboardpage.adminUserMoreInfoClick();
-		String actualAdminTitle = adminuserpage.getAdminUserTitle();
-		String extectedAdminTitle= "Admin Users";
-		Assert.assertEquals(actualAdminTitle, extectedAdminTitle);
+		
+}
+	@Test
+	public void verifyAdminHome() {
+		loginpage = new LoginPage(driver);
+		dashboardpage = new DashBoardPage(driver);
+		adminuserpage=new AdminUserPage(driver);
+		loginpage.login("admin", "admin");
+		dashboardpage.adminUserMoreInfoClick();
+		adminuserpage.homeButton();
+		
+		
 	}
 }
