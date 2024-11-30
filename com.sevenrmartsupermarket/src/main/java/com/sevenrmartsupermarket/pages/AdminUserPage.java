@@ -1,10 +1,14 @@
 package com.sevenrmartsupermarket.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.sevenrmartsupermarket.utilities.GeneralUtility;
 import com.sevenrmartsupermarket.utilities.PageUtility;
 
 
@@ -12,6 +16,7 @@ import com.sevenrmartsupermarket.utilities.PageUtility;
 public class AdminUserPage {
 	WebDriver driver;
 	PageUtility pageutility;
+	GeneralUtility generalutility;
 	@FindBy(xpath = "//h1[@class='m-0 text-dark']")
 	WebElement AdminUserTitle;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
@@ -34,11 +39,18 @@ public class AdminUserPage {
 	WebElement status;
 	@FindBy(xpath="//a[text()='Home']")
 	WebElement home;
+	@FindBy(xpath="//a[@class='btn btn-sm btn btn-danger btncss']")
+	WebElement deleteUsername;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	WebElement deleteSuccess;
+	@FindBy(xpath="//table//tbody//tr//td[1]")
+	List<WebElement> deleteAdminUser;
 	public AdminUserPage(WebDriver driver) 
 	{
 		this.driver= driver;
 		PageFactory.initElements(driver,this);
 		pageutility=new PageUtility(driver);
+		
 	}
 	public String getAdminUserTitle()
 	{
@@ -90,8 +102,23 @@ public class AdminUserPage {
 	{
 		home.click();
 	}
+	public void userDeleteButton() {
+		deleteUsername.click();
 		
 	}
+	public String userDeleteSuccess() {
+		String messageAlert = deleteSuccess.getText().substring(9);
+		String actualMessage =messageAlert;
+		System.out.println(actualMessage);
+		return actualMessage;
+	
+	}
+	
+		
+		
+	}
+	
+	
 
 	
 

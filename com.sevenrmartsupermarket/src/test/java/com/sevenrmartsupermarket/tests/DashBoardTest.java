@@ -56,7 +56,10 @@ public class DashBoardTest extends Base {
 		loginpage.login("admin", "admin");
 		dashboardpage.adminUserMoreInfoClick();
 		adminuserpage.homeButton();
-		
-		
+		String expectedDashName= dashboardpage.dashNamebutton();
+		String actualDashName="Dashboard";
+		Assert.assertEquals(actualDashName, expectedDashName);
+				
 	}
+	
 }

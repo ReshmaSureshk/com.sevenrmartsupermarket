@@ -19,6 +19,8 @@ public class DashBoardPage {
 	List<WebElement> allDashboardItems;
 	@FindBy(xpath = "//p[text()='Admin Users']/../../div/following-sibling::a")
 	private WebElement adminUserMoreInfoButton;
+	@FindBy(xpath="//li[contains(text(),'Dashboard')]")
+	WebElement dashName;
 
 	public DashBoardPage(WebDriver driver) {
 		this.driver = driver;
@@ -39,5 +41,10 @@ public class DashBoardPage {
 public void adminUserMoreInfoClick()
 {
 	adminUserMoreInfoButton.click();
+}
+public String dashNamebutton()
+{
+	return dashName.getText();
+	
 }
 }
