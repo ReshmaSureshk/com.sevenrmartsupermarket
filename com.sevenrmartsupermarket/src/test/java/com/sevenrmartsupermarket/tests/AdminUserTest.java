@@ -26,7 +26,7 @@ public class AdminUserTest extends Base {
 		dashboardpage.adminUserMoreInfoClick();
 		adminuserpage=new AdminUserPage(driver);
 		adminuserpage.createNewUser();
-		adminuserpage.enterUserDetails("KIKI","kiara");
+		adminuserpage.enterUserDetails("KIKI","kiarachoorapra");
 		adminuserpage.selectUserType().clickSaveButton();
 	}
 	@Test
